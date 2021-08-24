@@ -1,6 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
+    <div>
+      <ul class="header"> 
+        <li class="imgfix">
+          <img src="./assets/logo.png" alt="" srcset="">
+        </li>
+        <li> 
+          Home 
+        </li>
+        <li>
+
+        </li>
+      </ul>
+    </div>
     <HelloWorld msg="Welcome to Your Vue.js App"/>
   </div>
 </template>
@@ -17,12 +29,36 @@ export default {
 </script>
 
 <style>
+* {
+  margin: 0;
+  padding: 0;
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+
 }
+.header {
+  list-style: none;
+  background-color: #2c3e50;
+  color: white; 
+  display: flex;
+  justify-content: left;
+  padding-inline-start: 0;
+  vertical-align: middle;
+}
+.header li {
+  padding-left: 30px;
+  padding-top: 12px;
+}
+.header img {
+  height: 35px; 
+}
+.header .imgfix{
+  padding-top:7px !important;
+}
+
 </style>
