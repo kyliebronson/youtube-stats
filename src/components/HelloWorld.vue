@@ -72,4 +72,10 @@ a {
   font-size: 20px;
   color: #00b887;
 }
+@media (max-width: 500px) {
+  .videos {
+    display: block;
+    justify-content: inherit;
+  }
+}
 </style>

@@ -5,12 +5,30 @@
         <li class="imgfix">
           <img src="./assets/logo.png" alt="" srcset="" />
         </li>
-        <li><router-link to="/"> Home </router-link></li>
-        <li><router-link to="/channel1"> Nonsense </router-link></li>
-        <li><router-link to="/channel2"> Clips </router-link></li>
-        <li><router-link to="/channel3"> GAMING </router-link></li>
+        <li>
+          <router-link to="/"> Home </router-link>
+        </li>
+        <li><router-link to="/channel1"> JV NONSENSE </router-link></li>
+        <li><router-link to="/channel2"> JV CLIPS </router-link></li>
+        <li><router-link to="/channel3"> VMS GAMING </router-link></li>
+        <li class="mobile-button">
+          <button @click="showMobileMenu">***</button>
+        </li>
       </ul>
+
+      <!-- Mobile menu -->
+      <div class="mobile-menu" v-if="mobileVisible">
+        <ul @click="showMobileMenu">
+          <li>
+            <router-link to="/"> Home </router-link>
+          </li>
+          <li><router-link to="/channel1"> JV NONSENSE </router-link></li>
+          <li><router-link to="/channel2"> JV CLIPS </router-link></li>
+          <li><router-link to="/channel3"> VMS GAMING </router-link></li>
+        </ul>
+      </div>
     </div>
+
     <router-view />
   </div>
 </template>
@@ -22,6 +40,16 @@ export default {
   name: "App",
   components: {
     HelloWorld,
+  },
+  data() {
+    return {
+      mobileVisible: false,
+    };
+  },
+  methods: {
+    showMobileMenu() {
+      this.mobileVisible = !this.mobileVisible;
+    },
   },
 };
 </script>
@@ -48,6 +76,12 @@ export default {
   padding-inline-start: 0;
   vertical-align: middle;
 }
+.mobile-button {
+  display: none;
+}
+.mobile-menu {
+  display: none;
+}
 .header li {
   padding-left: 30px;
   padding-top: 12px;
@@ -55,6 +89,7 @@ export default {
 .header li a {
   color: white;
   text-decoration: none;
+  text-transform: uppercase;
 }
 .header li a:hover {
   color: #2afc98;
@@ -65,5 +100,20 @@ export default {
 }
 .header .imgfix {
   padding-top: 7px !important;
+}
+
+@media (max-width: 500px) {
+  .header li {
+    display: none;
+  }
+  .header .imgfix {
+    display: block !important;
+  }
+  .mobile-button {
+    display: block !important;
+  }
+  .mobile-menu {
+    display: block !important;
+  }
 }
 </style>
