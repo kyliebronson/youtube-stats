@@ -1,20 +1,21 @@
 <template>
   <div>
-    <div class="videos" v-for="item in items" :key="item">
+    <div class="videos">
       <div class="channel-info">
-        <p class="channel-title">Channel Name</p>
-        <p class="subscriber-count">Subscriber Count</p>
+        <p class="channel-title">{{ channelName }}</p>
+        <p class="subscriber-count">Subscribers: {{ subscriberCount }}</p>
       </div>
 
-      <div class="video" v-for="n in 4" :key="n">
-        <img src="../assets/youtube-thumbnail.png" alt="" srcset="" />
+      <div class="video" v-for="v in videos" :key="v">
+        <img :src="v.thumbnail" alt="" srcset="" />
+        <p>{{ v.video_name }}</p>
         <div class="video-text">
-          <p>Views: 10</p>
-          <p>Watch Hours: 2</p>
+          <p>Views: {{ v.views }}</p>
+          <p>Watch Hours: {{ v.watch_hours }}</p>
         </div>
         <div class="video-text">
-          <p>Likes: 40</p>
-          <p>Dislike: 0</p>
+          <p>Likes: {{ v.likes }}</p>
+          <p>Dislike: {{ v.dislikes }}</p>
         </div>
       </div>
     </div>
@@ -22,6 +23,7 @@
 </template>
   
 <script>
+import axios from "axios";
 export default {
   name: "HelloWorld",
   props: {
@@ -29,15 +31,32 @@ export default {
   },
   data() {
     return {
-      items: [
-        { message: "Foo" },
-        { message: "Bar" },
-        { message: "Foo" },
-        { message: "Bar" },
-        { message: "Foo" },
-        { message: "Bar" },
-      ],
+      videos: [],
+      channelName: "",
+      subscriberCount: 0,
     };
+  },
+  mounted() {
+    axios
+      .get("http://192.168.1.80:9898/stats")
+      .then((response) => {
+        // handle success
+        let d = response.data.response;
+
+        for (let i = 0; i < d.length; i++) {
+          //console.log(this.$route.path);
+          if ("/" + d[i].channel_name == this.$route.path) {
+            console.log(d[i].channel_name);
+            this.channelName = d[i].channel_name;
+            this.subscriberCount = d[i].subscriber;
+            this.videos = d[i].videos;
+          }
+        }
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+      });
   },
 };
 </script>

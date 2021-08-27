@@ -19,8 +19,8 @@ Vue.config.productionTip = false
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/channel1', component: HelloWorld },
-  { path: '/channel2', component: HelloWorld },
+  { path: '/JVNonsense', component: HelloWorld },
+  { path: '/JVClips', component: HelloWorld },
   { path: '/channel3', component: HelloWorld },
 ]
 

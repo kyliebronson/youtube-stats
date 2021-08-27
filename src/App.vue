@@ -8,8 +8,8 @@
         <li>
           <router-link to="/"> Home </router-link>
         </li>
-        <li><router-link to="/channel1"> JV NONSENSE </router-link></li>
-        <li><router-link to="/channel2"> JV CLIPS </router-link></li>
+        <li><router-link to="/JVNonsense"> JV NONSENSE </router-link></li>
+        <li><router-link to="/JVClips"> JV CLIPS </router-link></li>
         <li><router-link to="/channel3"> VMS GAMING </router-link></li>
         <li class="mobile-button" @click="showMobileMenu">
           <font-awesome-icon icon="bars" />
@@ -22,8 +22,8 @@
           <li>
             <router-link to="/"> Home </router-link>
           </li>
-          <li><router-link to="/channel1"> JV NONSENSE </router-link></li>
-          <li><router-link to="/channel2"> JV CLIPS </router-link></li>
+          <li><router-link to="/JVNonsense"> JV NONSENSE </router-link></li>
+          <li><router-link to="/JVClips"> JV CLIPS </router-link></li>
           <li><router-link to="/channel3"> VMS GAMING </router-link></li>
         </ul>
       </div>
