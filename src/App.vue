@@ -11,8 +11,8 @@
         <li><router-link to="/channel1"> JV NONSENSE </router-link></li>
         <li><router-link to="/channel2"> JV CLIPS </router-link></li>
         <li><router-link to="/channel3"> VMS GAMING </router-link></li>
-        <li class="mobile-button">
-          <button @click="showMobileMenu">***</button>
+        <li class="mobile-button" @click="showMobileMenu">
+          <font-awesome-icon icon="bars" />
         </li>
       </ul>
 
@@ -78,6 +78,7 @@ export default {
 }
 .mobile-button {
   display: none;
+  margin-left: 65%;
 }
 .mobile-menu {
   display: none;
@@ -114,6 +115,13 @@ export default {
   }
   .mobile-menu {
     display: block !important;
+    background-color: #3a5269;
+  }
+  .mobile-menu a {
+    color: white;
+  }
+  .mobile-menu li {
+    padding: 8px;
   }
 }
 </style>

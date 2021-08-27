@@ -1,12 +1,20 @@
 <template>
   <div>
     <div class="videos" v-for="item in items" :key="item">
-      <p class="channel-title">Channel Name</p>
+      <div class="channel-info">
+        <p class="channel-title">Channel Name</p>
+        <p class="subscriber-count">Subscriber Count</p>
+      </div>
+
       <div class="video" v-for="n in 4" :key="n">
         <img src="../assets/youtube-thumbnail.png" alt="" srcset="" />
         <div class="video-text">
           <p>Views: 10</p>
           <p>Watch Hours: 2</p>
+        </div>
+        <div class="video-text">
+          <p>Likes: 40</p>
+          <p>Dislike: 0</p>
         </div>
       </div>
     </div>
@@ -68,9 +76,12 @@ a {
   padding-right: 10px;
 }
 .videos .channel-title {
-  padding-right: 45px;
   font-size: 20px;
   color: #00b887;
+}
+.videos .channel-info {
+  text-align: center;
+  padding-right: 45px;
 }
 @media (max-width: 500px) {
   .videos {
