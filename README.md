@@ -1,19 +1,11 @@
-# youtube
+# Youtube Statistics Application
+## By Kylie Bronson
 
-## Project setup
-```
-npm install
-```
+Youtube-stats is a custom built website for viewing youtube stats.
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+- Built with simple html, javascript, css, and vue.
+- Mobile Friendly!
+- And Magic!
 
-### Compiles and minifies for production
-```
-npm run build
-```
+![Website](https://jmp.sh/jbS8xcI)
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
