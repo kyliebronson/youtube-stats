@@ -1,11 +1,10 @@
 <template>
   <div>
+    <div class="channel-info">
+      <p class="channel-title">{{ channelName }}</p>
+      <p class="subscriber-count">Subscribers: {{ subscriberCount }}</p>
+    </div>
     <div class="videos">
-      <div class="channel-info">
-        <p class="channel-title">{{ channelName }}</p>
-        <p class="subscriber-count">Subscribers: {{ subscriberCount }}</p>
-      </div>
-
       <div class="video" v-for="v in videos" :key="v">
         <img :src="v.thumbnail" alt="" srcset="" />
         <p>{{ v.video_name }}</p>
@@ -15,7 +14,8 @@
         </div>
         <div class="video-text">
           <p>Likes: {{ v.likes }}</p>
-          <p>Dislike: {{ v.dislikes }}</p>
+          <p>Dislike: {{ v.dislike }}</p>
+          <p>Comments Count: {{ v.comments }}</p>
         </div>
       </div>
     </div>
@@ -25,7 +25,7 @@
 <script>
 import axios from "axios";
 export default {
-  name: "HelloWorld",
+  name: "Videos",
   props: {
     msg: String,
   },
@@ -79,28 +79,34 @@ a {
 }
 .videos img {
   width: 200px;
+  border-top: solid white;
+  border-bottom: solid white;
+  border-width: 3px;
 }
 .videos {
   padding: 30px;
   display: flex;
   justify-content: center;
   color: black;
+  flex-wrap: wrap;
 }
 .video {
   margin-right: 50px;
+  max-width: 300px;
+  padding-top: 20px;
 }
 .video-text p {
   font-size: 12px;
   display: inline-block;
   padding-right: 10px;
 }
-.videos .channel-title {
+.channel-title {
   font-size: 20px;
   color: #00b887;
+  padding-top: 15px;
 }
-.videos .channel-info {
+.channel-info {
   text-align: center;
-  padding-right: 45px;
 }
 @media (max-width: 500px) {
   .videos {

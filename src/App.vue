@@ -29,17 +29,17 @@
       </div>
     </div>
 
-    <router-view />
+    <router-view :key="$route.fullPath" />
   </div>
 </template>
 
 <script>
-import HelloWorld from "./components/HelloWorld.vue";
+import Videos from "./components/Videos.vue";
 
 export default {
   name: "App",
   components: {
-    HelloWorld,
+    Videos,
   },
   data() {
     return {

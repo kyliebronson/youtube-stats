@@ -2,7 +2,7 @@ import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router'
 import Home from '@/components/Home' 
-import HelloWorld from '@/components/HelloWorld'
+import Videos from '@/components/Videos'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { faBars } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
@@ -19,9 +19,9 @@ Vue.config.productionTip = false
 
 const routes = [
   { path: '/', component: Home },
-  { path: '/JVNonsense', component: HelloWorld },
-  { path: '/JVClips', component: HelloWorld },
-  { path: '/channel3', component: HelloWorld },
+  { path: '/JVNonsense', component: Videos },
+  { path: '/JVClips', component: Videos },
+  { path: '/channel3', component: Videos },
 ]
 
 const router = new VueRouter({
