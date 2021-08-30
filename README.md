@@ -7,5 +7,5 @@ Youtube-stats is a custom built website for viewing youtube stats.
 - Mobile Friendly!
 - And Magic!
 
-![Website](https://jmp.sh/jbS8xcI)
+![Website](https://i.ibb.co/mDjz16z/youtube-vue.png)
 
